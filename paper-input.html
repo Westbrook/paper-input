@@ -156,7 +156,7 @@ style this element.
       </template>
 
       <template is="dom-if" if="[[charCounter]]">
-        <paper-input-char-counter slot="add-on"></paper-input-char-counter>
+        <paper-input-char-counter slot="add-on" count-down="[[countDown]]"></paper-input-char-counter>
       </template>
 
     </paper-input-container>
@@ -252,6 +252,12 @@ style this element.
       Polymer.PaperInputBehavior,
       Polymer.IronFormElementBehavior
     ],
+      
+    properties: {
+      countDown: {
+        type: Boolean
+      }
+    },
 
     beforeRegister: function() {
       // We need to tell which kind of of template to stamp based on
